@@ -21,9 +21,9 @@ environment () {
   RANDOM_IDENTIFIER=$((RANDOM%999999))
   export PARENT_PROJECT=$(gcloud config get-value project)
   export FOURKEYS_PROJECT=$(printf "fourkeys-%06d" $RANDOM_IDENTIFIER)
-  export FOURKEYS_REGION=us-central1
+  export FOURKEYS_REGION=europe-west
   export HELLOWORLD_PROJECT=$(printf "helloworld-%06d" $RANDOM_IDENTIFIER)
-  export HELLOWORLD_REGION=us-central
+  export HELLOWORLD_REGION=europe-west
   export HELLOWORLD_ZONE=${HELLOWORLD_REGION}1-a
   export PARENT_FOLDER=$(gcloud projects describe ${PARENT_PROJECT} --format="value(parent.id)")
   export BILLING_ACCOUNT=$(gcloud beta billing projects describe ${PARENT_PROJECT} --format="value(billingAccountName)" || sed -e 's/.*\///g')
